@@ -1,0 +1,11 @@
+<%= simple_form_for @client do |f| %>
+<%= f.input :name, label: "Nombre" %>
+<%= f.input :email, label: "Email" %>
+<%= f.input :phone, label: "Teléfono" %>
+<%= f.input :state, label: "Estado" %>
+
+<div class="py-4">
+  <%= f.submit "Guardar", class: "btn btn-primary btn-block"%>
+</div>
+
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Todos los clientes</h1>
+
+<div class="container pt-5">
+  <p>Prospectos<%= Client.count(:state) %></p>
+  <p>Interesados<%= Client.count(:state) %></p>
+  <p>Clientes<%= Client.count(:state) %></p>
+
+</div>
+
+<div class="container pt-5">
+  <div class="container mt-3">
+    <% @clients.each do |client| %>
+      <%= client.email %>
+      <%= client.name %>
+      <%= client.phone %>
+      <%= client.state %>
+      <%= client.user.email %>
+      <%= client.created_at %>
+      <%= link_to "Ver", client_path(client) %>
+      <%= link_to "Editar", edit_client_path(client) %>
+    <% end %>
+  </div>
+</div>
